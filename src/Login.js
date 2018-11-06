@@ -1,5 +1,7 @@
 import React from 'react'
 
+import "./style/login.css"
+
 //import withcontext 
 
 //clearinputs

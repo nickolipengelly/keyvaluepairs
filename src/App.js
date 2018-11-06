@@ -5,6 +5,8 @@ import React from "react";
 //import router elements
 import { Switch, Route } from "react-router-dom";
 
+import "./style/app.css";
+
 //import elements
 import Nav from "./Nav";
 import Header from "./Header";

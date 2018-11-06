@@ -2,6 +2,8 @@ import React from "react";
 import ProgrammingPick from "./programmingPick";
 import LanguagePick from "./languagePick";
 
+import "./style/profile.css"
+
 function Profile() {
   return (
     <div>
