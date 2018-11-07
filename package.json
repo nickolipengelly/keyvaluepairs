@@ -1,29 +1,34 @@
 {
-  "name": "keyvaluepairs",
-  "version": "1.0.0",
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nickolipengelly/keyvaluepairs.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/nickolipengelly/keyvaluepairs/issues"
-  },
-  "homepage": "https://github.com/nickolipengelly/keyvaluepairs#readme",
+  "name": "kvp",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
     "body-parser": "^1.18.3",
     "dotenv": "^6.1.0",
     "express": "^4.16.4",
-    "mongoose": "^5.3.10",
+    "jsonwebtoken": "^8.3.0",
+    "mongoose": "^5.3.9",
     "multer": "^1.4.1",
-    "nodemon": "^1.18.6"
-  }
+    "nodemon": "^1.18.6",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.1.1",
+    "react-social-icons": "^3.0.0"
+  },
+  "scripts": {
+    "start": "nodemon server.js",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
