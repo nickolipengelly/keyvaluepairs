@@ -1,5 +1,7 @@
 import React from 'react'
 
+import "./style/languagePick.css"
+
 function LanguagePick(){
     return(
         <select name="spokenLanguage" id="spokenLanguage" multiple>

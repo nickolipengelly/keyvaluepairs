@@ -1,5 +1,6 @@
 import React from 'react'
 
+import "./style/programmingPick.css"
 
 function ProgrammingPick(){
     return(
