@@ -1,12 +1,12 @@
 const express = require('express');
-const {Router} = express;
+
 const multer = require('multer');
 const path = require ('path');
 
 // Routes
 
 const UserInfo = require('../model/userinfo');
-const userInfoRouter = Router();
+const userInfoRouter = express.Router();
 
 const upload = multer({
     dest: './temp',
@@ -64,7 +64,7 @@ userInfoRouter.route('/:id')
             }
         })
     })
-UserInfo.route("/img/:filename")
+userInfoRouter.route("/img/:filename")
     .get((req,res,next) =>{
         res.sendFile(path.resolve(__dirname, `../temp/${req.params.filename}`))
     })

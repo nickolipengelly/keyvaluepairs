@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname,"client","build")))
 
 
-app.use('/api/userinfo', require('./api/userinfo'));
+app.use('/api/userinfo', require('./routes/userinfo'));
 
 app.use((err, req, res, next) => {
     res.send({error: err.message})
