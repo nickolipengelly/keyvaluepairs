@@ -4,6 +4,7 @@ import "./style/programmingPick.css"
 
 function ProgrammingPick(){
     return(
+        <div>
         <select name="ProgrammingLanguage" id="programmingLanguage" multiple>
             <option value="CSS">CSS</option>
             <option value="HTML">HTML</option>
@@ -13,6 +14,8 @@ function ProgrammingPick(){
             <option value=""></option>
             <option value=""></option>
         </select>
+        </div>    
+    
     )
 }
 
