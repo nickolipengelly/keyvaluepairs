@@ -57,6 +57,12 @@ const userInfoSchema = new Schema({
     student:{
         type: String,
 
+    },
+    overview:{
+        type: String,
+    },
+    position:{
+        type: String,
     }
 });
 

@@ -64,7 +64,7 @@ userInfoRouter.route('/:id')
             }
         })
     })
-UserInfo.route("/img/:filename")
+userInfoRouter.route("/img/:filename")
     .get((req,res,next) =>{
         res.sendFile(path.resolve(__dirname, `../temp/${req.params.filename}`))
     })
