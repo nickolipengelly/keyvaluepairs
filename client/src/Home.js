@@ -4,8 +4,11 @@ import "./style/home.css";
 
 function Home() {
   return (
-    <div>
-      <p>
+    <div className="home">
+      <p >
+        READY TO GET YOUR GIT PUSHED IN?
+        </p>
+        <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore odit
       minima quibusdam voluptatem? Molestiae placeat tenetur architecto eaque
       dolorum atque excepturi autem, tempora quia illo voluptatibus, minus
