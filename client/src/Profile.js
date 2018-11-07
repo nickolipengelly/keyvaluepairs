@@ -7,6 +7,7 @@ import LanguagePick from "./languagePick";
 
 import "./style/profile.css"
 
+
 const axiosCustom = axios.create({
     transformRequest: [data =>{
         const formData = new FormData()
@@ -92,6 +93,26 @@ class Profile extends Component {
             </div>
         );
     }
-}
+
+// function Profile() {
+//   return (
+//     <div className="profile">
+//       <form>
+//         <ProgrammingPick />
+//         <LanguagePick />
+//         <label for="avatar">Profile Picture: </label>
+//         <input
+//           type="file"
+//           id="avatar"
+//           name="avatar"
+//           accept="image/png,image/jpeg"
+//         />
+//         <textarea name="bio" rows="40" cols="80" />
+//         <button className="profileButton">Submit</button>
+//       </form>
+//     </div>
+//   );
+// >>>>>>> master
+// }
 
 export default Profile;

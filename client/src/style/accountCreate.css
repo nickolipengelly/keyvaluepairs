@@ -1,0 +1,18 @@
+.account {
+    text-align: center;
+    display: grid;
+    width: 50%
+}
+
+.submit {
+    width: 25%;
+    justify-items: center;
+    
+}
+
+.submit:hover {
+    background-color: skyblue;
+    color: whitesmoke;
+    transition: 200ms;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
