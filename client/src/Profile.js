@@ -6,7 +6,7 @@ import "./style/profile.css"
 
 function Profile() {
   return (
-    <div>
+    <div className="profile">
       <form>
         <ProgrammingPick />
         <LanguagePick />
@@ -18,7 +18,7 @@ function Profile() {
           accept="image/png,image/jpeg"
         />
         <textarea name="bio" rows="40" cols="80" />
-        <button>Submit</button>
+        <button className="profileButton">Submit</button>
       </form>
     </div>
   );
