@@ -1,0 +1,41 @@
+.nav{
+    text-align: center;
+    height: 30px; 
+   
+}
+.homeLink{
+    border: 1px solid black; 
+    text-decoration: none;
+    padding: 4px;
+    
+    
+}
+.profileLink{
+    border: 1px solid black;
+    text-decoration: none; 
+    padding: 4px;
+    
+}
+
+.matchesLink{
+    border: 1px solid black; 
+    text-decoration: none;
+    padding: 4px;
+    
+}
+
+.homeLink:hover{
+    transition: 300ms;
+    color: red; 
+    font-size: 20px; 
+}
+
+.profileLink:hover{
+    font-size: 20px;
+    transition: 300ms; 
+    color: rebeccapurple; 
+    transition-delay: 100ms;
+}
+
+
+

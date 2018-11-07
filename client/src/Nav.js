@@ -5,10 +5,10 @@ import "./style/nav.css"
 
 function Nav() {
   return (
-    <nav>
-      <Link to="/"> Home </Link>
-      <Link to="./Profile"> Edit Profile </Link>
-      <Link to="./Matches"> Matches </Link>
+    <nav className="nav">    
+      <Link className="homeLink"to="/"> Home </Link>
+      <Link className="profileLink"to="./Profile"> Edit Profile </Link>
+      <Link className="matchesLink"to="./Matches"> Matches </Link>    
     </nav>
 
   );
