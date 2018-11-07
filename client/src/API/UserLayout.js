@@ -5,20 +5,17 @@ import React from 'react'
 import SwiperPage from './UserDetailPage'
 
 
-function UserChoice(userInfo, handleLike,handleDislike) {
+function UserLayout({userinfo}) {
 
     const src = '/api/userinfo/img/';
-    const like = 'like';
-    const dislike = 'dislike'
 
-    const userElement = userInfo.map((userInfo) =>(
+
+    const userElement = userinfo.map((userInfo) =>(
         <div className={'likeprofile'}>
-            <Link className={'likelink'} to={`/userinfo/${userInfo._id}`}>
-                <div className={'linkimg'}><img alt='filename' src={`${src}${userInfo.filename}`} width={400}/></div>
-                <div className={'likename'}>{userInfo.name}</div>
+            <Link className={'likelink'} to={`/userinfo/${userinfo._id}`}>
+                <div className={'linkimg'}><img alt='filename' src={`${src}${userinfo.filename}`} width={400}/></div>
+                <div className={'likename'}>{userinfo.fName}</div>
             </Link>
-            <button onClick={() =>handleDislike(userInfo._id)}>{dislike}</button>
-            <button onClick={() =>handleLike(userInfo._id)}>{icon}</button>
         </div>
     ))
     return(
@@ -30,13 +27,13 @@ function UserChoice(userInfo, handleLike,handleDislike) {
                     </nav>
                 )}/>
                 <Route
-                    path='/userInfo/:id'
+                    path='/userinfo/:id'
                     render={({match: {params: {id}}}) =>(
-                        <SwiperPage {...userInfo.find(user => id === user._id)}/>
+                        <SwiperPage {...userinfo.find(user => id === user._id)}/>
                     )}/>
             </Switch>
         </div>
     )
 }
 
-export default UserChoice;
+export default UserLayout;

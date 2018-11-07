@@ -35,7 +35,7 @@ const userInfoSchema = new Schema({
     gender:{
         type: String,
     },
-    programmingLanguages: [{
+    programmingLanguage: [{
         type: String,
     }],
     like:{
@@ -56,7 +56,9 @@ const userInfoSchema = new Schema({
     },
     student:{
         type: String,
-
+    },
+    bio:{
+        type: String
     }
 });
 
