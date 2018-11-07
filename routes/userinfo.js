@@ -1,12 +1,12 @@
 const express = require('express');
-
+const {Router} = express;
 const multer = require('multer');
 const path = require ('path');
 
 // Routes
 
 const UserInfo = require('../model/userinfo');
-const userInfoRouter = express.Router();
+const userInfoRouter = Router();
 
 const upload = multer({
     dest: './temp',

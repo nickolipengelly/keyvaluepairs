@@ -1,6 +1,6 @@
 import React from 'react'
 
-function SwiperPage({_id,filename,fname,lname,age,gender,programmingLanguages,overview,experience,position}) {
+function SwiperPage({_id,filename,fName,lName,age,gender,programmingLanguages,overview,experience,position}) {
 
     const src = '/api/userinfo/img/';
 
@@ -11,7 +11,7 @@ function SwiperPage({_id,filename,fname,lname,age,gender,programmingLanguages,ov
         </div>
 
         <div className='swipepagetext'>
-            <h1>{fname}{lname}</h1><br/>
+            <h1>{fName}{lName}</h1><br/>
             <h3>Current Position: {position}</h3><br/>
             <h3>{overview}</h3><br/>
             <h4>Experience: {experience}</h4><br/>

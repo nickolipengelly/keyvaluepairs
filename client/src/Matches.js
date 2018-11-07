@@ -1,11 +1,13 @@
 import React from 'react'
+
+import UserAPI from './API/UserAPI'
 import "./style/matches.css"
 
 function Matches(){
     return(
         <div>
-            test
-
+            TEST~~~
+        <UserAPI/>
 
         </div>
 

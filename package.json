@@ -17,6 +17,7 @@
   "bugs": {
     "url": "https://github.com/nickolipengelly/keyvaluepairs/issues"
   },
+  "proxy": "http://localhost:8700",
   "homepage": "https://github.com/nickolipengelly/keyvaluepairs#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
