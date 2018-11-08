@@ -1,29 +1,27 @@
-
-import React from 'react'
-
-import UserAPI from './API/UserAPI'
-import "./style/matches.css"
-
-function Matches(){
-    return(
-        <div>
-            TEST~~~
-        <UserAPI/>
-
 import React from "react";
+
+import UserAPI from "./API/UserAPI";
 import "./style/matches.css";
 
+function Matches() {
+  return (
+    <div>
+      TEST~~~
+      <UserAPI />
+    </div>
+  );
+}
+
+export default Matches;
 
 //axios call to get photo,name, programming langauges, preferred speaking language, and vote button.
 
-
-//map through returned value and output to matches to display 
-
+//map through returned value and output to matches to display
 
 // function Matches() {
 //   return (
 //     <div>
-      
+
 //       Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum,
 //       ratione. Eveniet rerum sed nesciunt, veniam quia nulla qui pariatur
 //       explicabo recusandae temporibus accusamus tenetur. Voluptatum eveniet
@@ -34,5 +32,3 @@ import "./style/matches.css";
 //     </div>
 //   );
 // }
-
-export default Matches;

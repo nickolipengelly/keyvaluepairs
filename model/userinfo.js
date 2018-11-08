@@ -51,11 +51,11 @@ const userInfoSchema = new Schema({
         type: String
     }],
     teacher:{
-        type: String,
+        type: Boolean,
 
     },
     student:{
-        type: String,
+        type: Boolean,
     },
     bio:{
         type: String
