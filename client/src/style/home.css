@@ -1,3 +1,19 @@
 .home{
     text-align: center;
+    padding: 10px;
+    margin: 10px; 
+}
+
+.signUp{
+    text-decoration: none;
+    padding: 5px; 
+    border: 1px solid black; 
+    border-radius: 20%;
+}
+
+.signUp:hover{
+    background-color: aqua;
+    color: black;
+    font-size: 20px; 
+    transition: 1000ms;
 }
