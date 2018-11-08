@@ -10,9 +10,6 @@ const options = [
   { value: "ruby", label: "Ruby" },
   { value: "python", label: "Python" },
   { value: "sql", label: "SQL" }
-  // {value: '', label:'Mandarin'}
-  // {value: 'c#', label:'Mandarin'}
-  // {value: 'c#', label:'Mandarin'}
 ];
 
 //changed selectedOption from null to an array

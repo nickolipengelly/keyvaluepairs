@@ -1,9 +1,6 @@
 import React, { Component, createRef } from "react";
 import axios from "axios";
 
-import ProgrammingPick from "./programmingPick";
-import LanguagePick from "./languagePick";
-
 import "./style/profile.css";
 import LanguageMultiSelect from "./LanguageMultiSelect";
 import ProgrammingMultiSelect from './ProgrammingMultiSelect';
@@ -77,14 +74,10 @@ class Profile extends Component {
   render() {
     return (
       <div>
-        <LanguageMultiSelect/>
-        <ProgrammingMultiSelect/>
         <form onSubmit={this.handleUpload(this.uploader, this.state)}>
-          <ProgrammingPick handleChange={this.programmingHandleChange} />
-          <LanguagePick handleChange={this.spokenHandleChange} />
-          <input type="checkbox" name="Teacher" id="Teacher"/>
-          <input type="checkbox" name="Student" id="Student"/>
-          <textarea
+          <ProgrammingMultiSelect handleChange={this.programmingHandleChange} />
+          <LanguageMultiSelect handleChange={this.spokenHandleChange} />
+           <textarea
             onChange={this.handleChange}
             value={this.bio}
             name="bio"
