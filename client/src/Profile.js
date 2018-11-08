@@ -39,7 +39,7 @@ class Profile extends Component {
         this.setState({[name]: value})
     }
     sendImage(file,inputs){
-        return axiosCustom.post('/api/userinfos', {file, ...inputs})
+        return axiosCustom.put('/api/userinfo', {file, ...inputs})
             .then(response => response.data)
     }
     handleUpload(uploader, inputs){
