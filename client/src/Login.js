@@ -8,12 +8,14 @@ import "./style/login.css";
 
 //push to welcome page
 
-function Login() {
+function LogIn() {
   return (
-    <form>
+    <form className="logInForm">
+      <label htmlFor="userName">Username: </label>
       <input type="text" />
+      <label htmlFor="password">Password: </label>
       <input type="password" name="" id="" />
-      <button onClick="login"> Login </button>
+      <button onClick="logIn"> Login </button>
     </form>
   );
 }
@@ -21,4 +23,4 @@ function Login() {
 //login get loging info
 //get todo's return response
 
-export default Login;
+export default LogIn;

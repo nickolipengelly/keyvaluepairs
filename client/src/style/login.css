@@ -1,0 +1,7 @@
+.logInForm{
+    display: grid;
+    grid-auto-columns: auto;
+    text-align: center; 
+    align-content: center;
+    justify-items: center
+}
