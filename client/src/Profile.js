@@ -39,15 +39,14 @@ class Profile extends Component {
   }
   sendImage(file, inputs) {
     return axiosCustom
-      .post("/api/userinfo", { file, ...inputs })
+      .put("/api/userinfo", { file, ...inputs })
       .then(response => response.data);
   }
   handleUpload(uploader, inputs) {
     return e => {
       e.preventDefault();
-      this.sendImage(uploader.current.files[0], inputs).then(
-        this.manageFileResponse
-      );
+      this.sendImage(uploader.current.file[0], inputs)
+          .then(this.manageFileResponse);
     };
   }
   manageFileResponse(newUserInfo) {

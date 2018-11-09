@@ -12,7 +12,7 @@ function Home() {
         dolorum atque excepturi autem, tempora quia illo voluptatibus, minus
         accusamus optio qui!
       </p>
-      <Link className="signUp" to="./AccountCreate">Sign Up</Link>
+      <Link className="signUp" to="/AccountCreate">Sign Up</Link>
     </div>
   );
 }

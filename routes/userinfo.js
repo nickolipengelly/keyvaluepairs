@@ -23,8 +23,8 @@ userInfoRouter.route('/')
             else res.status(200).send(foundUserInfo)
         })
     })
-    .post(upload.single('file'),(req,res,next)=>{
-        req.body.filename = req.body.filename;
+    .put(upload.single('file'),(req,res,next)=>{
+        req.body.filename = req.file.filename;
         const newUserInfo = new UserInfo(req.body);
         newUserInfo.save((err, savedUserInfo) =>{
             if(err){
@@ -51,16 +51,6 @@ userInfoRouter.route('/:id')
                 next(err)
             } else{
                 res.status(204).send(deleteUserinfo)
-            }
-        })
-    })
-    .put((req,res) =>{
-        UserInfo.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, editedUserInfo) =>{
-            if(err){
-                res.status(400)
-                next(err)
-            }else{
-                res.status(200).send(editedUserInfo)
             }
         })
     })

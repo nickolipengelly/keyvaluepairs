@@ -1,11 +1,13 @@
 import React from 'react'
 
-function SwiperPage({_id,filename,fName,lName,age,gender,programmingLanguages,overview,experience,position}) {
+function UserDetail({_id,filename,fName,lName,age,gender,programmingLanguage,bio,experience,position}) {
 
     const src = '/api/userinfo/img/';
 
     return <div key={_id} className={'swipepage'}>
-
+        <button onClick={()=>{
+           return this.props.history.push("/Matches") }
+        }>Back</button>
         <div className={'swipepageimg'}>
             <img alt='filename' src={`${src}${filename}`} width={200}/>
         </div>
@@ -13,9 +15,9 @@ function SwiperPage({_id,filename,fName,lName,age,gender,programmingLanguages,ov
         <div className='swipepagetext'>
             <h1>{fName}{lName}</h1><br/>
             <h3>Current Position: {position}</h3><br/>
-            <h3>{overview}</h3><br/>
+            <h3>{bio}</h3><br/>
             <h4>Experience: {experience}</h4><br/>
-            <h4>Programming Languages: {programmingLanguages}</h4><br/>
+            <h4>Programming Languages: {programmingLanguage}</h4><br/>
             <h5>Age: {age}</h5><h5>Gender: {gender}</h5>
 
         </div>
@@ -23,6 +25,6 @@ function SwiperPage({_id,filename,fName,lName,age,gender,programmingLanguages,ov
 
 }
 
-export default SwiperPage;
+export default UserDetail;
 
 
