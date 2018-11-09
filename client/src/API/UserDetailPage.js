@@ -5,7 +5,9 @@ function UserDetail({_id,filename,fName,lName,age,gender,programmingLanguage,bio
     const src = '/api/userinfo/img/';
 
     return <div key={_id} className={'swipepage'}>
-
+        <button onClick={()=>{
+           return this.props.history.push("/Matches") }
+        }>Back</button>
         <div className={'swipepageimg'}>
             <img alt='filename' src={`${src}${filename}`} width={200}/>
         </div>

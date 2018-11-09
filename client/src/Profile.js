@@ -45,9 +45,8 @@ class Profile extends Component {
   handleUpload(uploader, inputs) {
     return e => {
       e.preventDefault();
-      this.sendImage(uploader.current.files[0], inputs).then(
-        this.manageFileResponse
-      );
+      this.sendImage(uploader.current.file[0], inputs)
+          .then(this.manageFileResponse);
     };
   }
   manageFileResponse(newUserInfo) {

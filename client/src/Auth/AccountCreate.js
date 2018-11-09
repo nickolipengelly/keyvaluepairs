@@ -1,13 +1,14 @@
 import React,{Component} from "react";
+import {withContext} from "../API/UserAPI";
 
-//push to axios
-import "./style/accountCreate.css";
 
-export default class AccountCreate extends Component {
+import "../style/accountCreate.css";
+
+class AccountCreate extends Component {
     constructor(props){
       super(props);
       this.state = {
-        fName: '',
+          fName: '',
           lName: '',
           email: '',
           password: '',
@@ -16,15 +17,27 @@ export default class AccountCreate extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this)
     }
-    handleChange(
-        {target: {name, value}}) {
-        this.setState({[name]: value})
+
+    handleChange = (e) =>{
+        const {name, value} = e.target
+        this.setState({
+            [name]: value
+        })
+    };
+
+    clearInputs = () =>{
+        this.setState({
+            email:"",
+            password:"",
+            fName:"",
+            lName:"",
+        })
     }
     handleSubmit(){
       return e => {
         e.preventDefault();
         if(this.validateForm()){
-          return this.props.history.push('/login')
+          return this.props.history.push('/Matches')
         }else{
           this.setState({err: true})
         }
@@ -55,3 +68,4 @@ export default class AccountCreate extends Component {
   }
 }
 
+export default withContext(AccountCreate)
