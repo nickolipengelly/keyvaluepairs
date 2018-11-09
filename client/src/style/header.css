@@ -4,3 +4,9 @@
     font-size:30px;
     color: black;
 }
+
+.headerGrid{
+    display: -ms-inline-grid; 
+    text-align: center;
+    margin: 5px;
+}

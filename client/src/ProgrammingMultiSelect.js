@@ -26,6 +26,8 @@ class ProgrammingMultiSelect extends React.Component {
     const { selectedOption } = this.state;
 
     return (
+      <div>
+        <label>Programming Language Select</label>
       <Select
         value={selectedOption}
         onChange={this.handleChange}
@@ -33,6 +35,7 @@ class ProgrammingMultiSelect extends React.Component {
         isMulti={true}
         placeholder={"Please select your preferred programming language(s)"}
       />
+      </div>
     );
   }
 }
