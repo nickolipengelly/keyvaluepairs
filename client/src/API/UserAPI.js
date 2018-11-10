@@ -83,7 +83,7 @@ export class UserAPIProvider extends Component{
     };
     render(){
 
-        const userinfo = this.state.results;
+        const userInfo = this.state.results;
 
         return(
 
