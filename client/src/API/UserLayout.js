@@ -32,7 +32,7 @@ function UserLayout({userinfos}) {
                 <Route
                     path='/Matches/:id'
                     render={({match: {params: {id}}}) =>(
-                        <UserDetail {...userinfos.find(user => id === user._id)}/>
+                        <UserDetail {...userinfo.find(user => id === user._id)}/>
                     )}/>
             </Switch>
         </div>
