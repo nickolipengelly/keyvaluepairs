@@ -34,12 +34,12 @@ const userInfoSchema = new Schema({
     programmingLanguage: [{
         type: String,
     }],
-    like:{
-        type: Boolean,
-    },
-    dislike:{
-        type: Boolean
-    },
+    like:[{
+        type: String,
+    }],
+    dislike:[{
+        type: String,
+    }],
     experience:{
         type: String,
     },
