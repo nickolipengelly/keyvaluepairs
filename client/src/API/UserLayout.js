@@ -5,13 +5,13 @@ import React from 'react'
 import UserDetail from './UserDetailPage'
 
 
-function UserLayout({userinfo}) {
+function UserLayout({userinfos}) {
 
     const src = '/api/userinfo/img/';
 
 
 
-    const userElement = userinfo.map((userinfo) =>(
+    const userElement = userinfos.map((userinfo) =>(
 
         <div className={'likeprofile'}>
             <Link className={'likelink'} to={`userinfo/Matches/${userinfo._id}`}>

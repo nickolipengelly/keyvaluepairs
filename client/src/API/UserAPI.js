@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios'
-import UserLayout from './UserLayout'
+
 const userAxios = axios.create();
 
 
@@ -14,50 +14,56 @@ userAxios.interceptors.request.use((config) =>{
 const UserAPI = React.createContext();
 // Import Pages
 
-
-
-
-
 export class UserAPIProvider extends Component{
     constructor(props){
         super(props);
         this.state = {
             results: [],
-            email: JSON.parse(localStorage.getItem("email"))||{},
-            token: localStorage.getItem("token")||""
+            userinfo: JSON.parse(localStorage.getItem('userinfo')) || {},
+            token: localStorage.getItem('token') || ''
         };
 
     }componentDidMount(){
         this.getUserAPI()
     }
+
     getUserAPI =() =>{
         return axios.get('/api/userinfo')
             .then(response => {
-               this.setState({results: response.data})
+               this.setState({
+                   results: response.data.map((developer, i) => {
+                       if( i === 0) developer.selected = true;
+                       developer.selected = false;
+                       return developer;
+                   })
+            })
                 return response;
             })
-    }
+    };
+
     userInfoDelete(userInfo_id){
-        return axios.delete('/api/userinfo/'+userInfo_id)
+        return axios.delete('/api/userinfo/'+ userInfo_id)
             .then(response => {
                 this.setState(prevState => {
                     return{results: prevState.results.filter(result => result._id !== userInfo_id)}
                 })
             })
     }
-    signup = (userInfo) =>{
-        return axios.post("auth/Signup", userInfo)
+
+    accountCreate = (userInfo) =>{
+        return axios.post("/auth/AccountCreate", userInfo)
             .then(response =>{
-                const{email, token} = response.data;
+                const{userinfo, token} = response.data;
                 localStorage.setItem("token", token);
-                localStorage.setItem("email", JSON.stringify(email));
+                localStorage.setItem("userinfo", JSON.stringify(userinfo));
                 this.setState({
-                    email,
+                    userinfo,
                     token
                 });
                 return response
             })
     };
+
     login = (credentials) =>{
         return axios.post("/auth/Login", credentials)
             .then(response =>{
@@ -72,6 +78,7 @@ export class UserAPIProvider extends Component{
                 return response
             })
     };
+
     logout = () =>{
         localStorage.removeItem("email");
         localStorage.removeItem("token");
@@ -81,19 +88,23 @@ export class UserAPIProvider extends Component{
             token:""
         })
     };
+// <<<<<<< nick5
+//     render(){
+
+//         const userInfo = this.state.results;
+// =======
+// >>>>>>> master
+
     render(){
-
-        const userInfo = this.state.results;
-
         return(
-
            <UserAPI.Provider
             value={{
                 getUserAPI: this.getUserAPI,
                 userDelete: this.userInfoDelete,
-                signup: this.signup,
+                accountCreate: this.accountCreate,
                 login: this.login,
-                logout: this.logout
+                logout: this.logout,
+                ...this.state
 
             }}
            >

@@ -4,13 +4,14 @@ import {withContext} from "../API/UserAPI";
 
 import "../style/accountCreate.css";
 
+
 class AccountCreate extends Component {
-    constructor(props){
-      super(props);
+    constructor(){
+      super();
       this.state = {
           fName: '',
           lName: '',
-          email: '',
+          email: "",
           password: '',
           err: false,
       }
@@ -19,7 +20,7 @@ class AccountCreate extends Component {
     }
 
     handleChange = (e) =>{
-        const {name, value} = e.target
+        const {name, value} = e.target;
         this.setState({
             [name]: value
         })
@@ -33,24 +34,19 @@ class AccountCreate extends Component {
             lName:"",
         })
     }
-    handleSubmit(){
-      return e => {
+    handleSubmit = (e) => {
         e.preventDefault();
-        if(this.validateForm()){
-          return this.props.history.push('/Matches')
-        }else{
-          this.setState({err: true})
-        }
-      }
+        this.props.accountCreate(this.state)
+            .then(()=> this.props.history.push("/Matches"))
     }
     validateForm(){
-        return this.state.email.length >= 2 && this.state.password.length >= 2 && this.state.password.match(/[0-9]+]/g)
+        return this.state.email.length >= 2 && this.state.password.length >= 2
     }
 
   render(){
   return (
       <div>
-        <form className="account" onSubmit={this.handleSubmit(this.state)}>
+        <form className="account" onSubmit={this.handleSubmit}>
           <label>First Name: </label>
           <input type="text" value={this.state.fName} name='fName' onChange={this.handleChange}/>
           <label>Last Name: </label>
@@ -68,4 +64,4 @@ class AccountCreate extends Component {
   }
 }
 
-export default withContext(AccountCreate)
+export default withContext(AccountCreate);

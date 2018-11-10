@@ -16,9 +16,9 @@ authRouter.post("/AccountCreate",(req, res, next) =>{
         newUserInfo.save((err, userinfo) =>{
             if(err){
                 res.status(500);
-                return ext(err)
+                return next(err)
             }
-            const token = jwt.sign(userinfo.toObject().process.env.SECRET);
+            const token = jwt.sign(userinfo.toObject(), process.env.SECRET);
             return res.status(201).send({userinfo: userinfo.toObject(), token})
         })
     })
