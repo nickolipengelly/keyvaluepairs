@@ -10,7 +10,7 @@ const app = express();
 
 app.use(morgan("dev"));
 app.use(express.json());
-app.use("/api", expressJwt({secret: process.env.SECRET}));
+// app.use("/api", expressJwt({secret: process.env.SECRET}));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname,"client","build")));
 
