@@ -1,9 +1,7 @@
 import React,{Component} from "react";
 import {withContext} from "../API/UserAPI";
 
-
 import "../style/accountCreate.css";
-
 
 class AccountCreate extends Component {
     constructor(){
