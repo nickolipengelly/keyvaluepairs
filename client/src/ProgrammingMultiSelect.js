@@ -1,6 +1,8 @@
 import React from "react";
 import Select from "react-select";
 
+import "./style/programmingMultiSelect.css"
+
 const options = [
   { value: "html", label: "HTML" },
   { value: "css", label: "CSS" },
@@ -26,7 +28,7 @@ class ProgrammingMultiSelect extends React.Component {
     const { selectedOption } = this.state;
 
     return (
-      <div>
+      <div className="programSelect">
         <label>Programming Language Select</label>
       <Select
         value={selectedOption}

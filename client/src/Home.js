@@ -17,7 +17,7 @@ function Home() {
         dolorum atque excepturi autem, tempora quia illo voluptatibus, minus
         accusamus optio qui!
       </p>
-      <Link className="signUp" to="./AccountCreate">
+      <Link className="signUp" to="./Auth/AccountCreate">
         Sign Up
       </Link>
     </div>

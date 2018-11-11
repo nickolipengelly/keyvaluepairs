@@ -1,6 +1,8 @@
 import React from "react";
 import Select from "react-select";
 
+import "./style/languageMultiSelect.css"
+
 const options = [
   { value: "english", label: "English" },
   { value: "spanish", label: "Spanish" },
@@ -22,7 +24,7 @@ class LanguageMultiSelect extends React.Component {
     const { selectedOption } = this.state;
 
     return (
-      <div>
+      <div className="languageStyle">
         <label> Spoken Language Select: </label>
         <Select
           value={selectedOption}

@@ -1,20 +1,45 @@
 import React from "react";
 import Rodal from "rodal";
 
+
 import "rodal/lib/rodal.css";
 
 import "./style/login.css";
 
 //import withcontext
+import {withContext} from './API/UserAPI';
 
-//clearinputs
+
 
 //push to welcome page
 class LogIn extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { visible: false };
+    this.state = { 
+      visible: false,
+      email: "",
+      password: "" };
   }
+
+  handleChange = e => {
+    const {name, value} = e.target; 
+     this.setState({
+       [name]: value
+     });
+  };
+
+  //clearinputs
+  clearInputs = () => { 
+    this.setState({
+      email: "", 
+      password: ""
+    });
+  };
+
+  handleSubmit = e => { 
+    e.preventDefault();
+    this.props.LogIn(this.state).then(() => this.props.history.push("./Matches.js"))
+  };
 
   show() {
     this.setState({ visible: true });
@@ -31,7 +56,7 @@ class LogIn extends React.Component {
         <Rodal className="rodal" visible={this.state.visible} onClose={this.hide.bind(this)}>
           <div>
             <form className="logInForm">
-              <label htmlFor="userName">Username: </label>
+              <label htmlFor="userName">E-Mail:</label>
               <input type="text" />
               <label htmlFor="password">Password: </label>
               <input type="password" name="" id="" />
@@ -47,4 +72,4 @@ class LogIn extends React.Component {
 //login get loging info
 //get todo's return response
 
-export default LogIn;
+export default withContext(LogIn);

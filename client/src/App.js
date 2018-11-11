@@ -12,8 +12,8 @@ import Switch from "./SwitchPage";
 function App() {
   return (
     <div>
-      <Header />
       <Nav />
+      <Header />
       <Switch />
     </div>
   );

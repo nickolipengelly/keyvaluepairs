@@ -1,52 +1,48 @@
-.nav{
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
+.nav {
+    font-family: 'Press Start 2P', cursive;
     text-align: center;
-    height: 30px; 
-    padding: 3px; 
-   
+    height: 20px;
+    padding-bottom: 5px;
+    border-bottom: 1px double grey;
+    width: 100%;
 }
-.homeLink{
-    border: 1px solid black; 
+
+.homeLink {
     text-decoration: none;
     padding: 4px;
-    border-radius: 40% 0% 0% 40%;
-    
-    
-}
-.profileLink{
-    border: 1px solid black;
-    text-decoration: none; 
-    padding: 4px;
-    
 }
 
-.matchesLink{
-    border: 1px solid black; 
+.profileLink {
     text-decoration: none;
     padding: 4px;
-    border-radius: 0% 40% 40% 0%;
-    
 }
 
-.homeLink:hover{
-    font-size: 20px;
-    transition: 300ms; 
-    color: rebeccapurple; 
-    transition-delay: 100ms;
-    background-color: white;
+.matchesLink {
+    text-decoration: none;
+    padding: 4px;
 }
 
-.profileLink:hover{
+.homeLink:hover {
     font-size: 20px;
-    transition: 300ms; 
-    color: rebeccapurple; 
+    transition: 300ms;
+    color: rebeccapurple;
     transition-delay: 100ms;
-    background-color: white;
+
 }
 
-.matchesLink:hover{
+.profileLink:hover {
     font-size: 20px;
-    transition: 300ms; 
-    color: rebeccapurple; 
+    transition: 300ms;
+    color: rebeccapurple;
     transition-delay: 100ms;
-    background-color: white;
+
+}
+
+.matchesLink:hover {
+    font-size: 20px;
+    transition: 300ms;
+    color: rebeccapurple;
+    transition-delay: 100ms;
 }
