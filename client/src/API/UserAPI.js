@@ -117,6 +117,7 @@ class UserAPIProvider extends Component {
   }
 }
 
+
 // nick rewrote consumer
 export const withContext = C => props => 
 <UserAPI.Consumer>
@@ -124,21 +125,5 @@ export const withContext = C => props =>
 </UserAPI.Consumer>
 
 
-
-// export const withContext = Component => {
-//   return props => {
-//     return (
-//       <UserAPI.Consumer>
-//         {globalState => {
-//           return <Component {...globalState} {...props} />;
-//         }}
-//       </UserAPI.Consumer>
-//     );
-//   };
-// };
-
-
-
-export default withContext(UserAPIProvider);
 
 

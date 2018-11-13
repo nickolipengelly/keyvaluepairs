@@ -1,3 +1,4 @@
+
 import { React, Component } from "react";
 import { withContext } from "./API/UserAPI"
 
@@ -75,13 +76,7 @@ class AccountCreate extends Component {
             value={this.state.password}
             onChange={this.handleChange}
           />
-          <label>Confirm Password: </label>
-          <input type="password" />
-          <button className="submit">Submit</button>
-        </form>
-      </div>
-    );
-  }
-}
+
+
 
 export default withContext(AccountCreate);
