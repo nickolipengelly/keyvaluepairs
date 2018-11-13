@@ -23,6 +23,7 @@
     "extends": "react-app"
   },
   "proxy": "http://localhost:8700",
+
   "browserslist": [
     ">0.2%",
     "not dead",

@@ -49,5 +49,3 @@ function UserDetail({
 }
 
 export default UserDetail;
-
-console.log(UserDetail)

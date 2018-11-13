@@ -1,13 +1,18 @@
+// ***I think you need to import createContext***
 import React, { Component } from "react";
 import axios from "axios";
 
+
 const userAxios = axios.create();
+
+
 
 userAxios.interceptors.request.use(config => {
   const token = localStorage.getItem("token");
   config.headers.Autherization = `Programming${token}`;
   return config;
 });
+
 
 const UserAPI = React.createContext();
 // Import Pages
@@ -111,6 +116,7 @@ export class UserAPIProvider extends Component {
   }
 }
 
+
 export const withContext = Component => {
   return props => {
     return (
@@ -123,4 +129,13 @@ export const withContext = Component => {
   };
 };
 
+
+
 export default withContext(UserAPIProvider);
+
+
+// nick rewrote context provider
+// export const withContext = C => props => 
+// <UserAPI.Consumer>
+//   {value => <C{...value}{...props} />}
+// </UserAPI.Consumer>
