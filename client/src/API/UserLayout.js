@@ -9,7 +9,8 @@ import UserDetail from "./UserDetailPage";
 
 function UserLayout({ userinfos }) {
   const src = "/api/userinfo/img/";
-//if youre  creating a classname please camelcase, so instead of linkimg do linkImg its just easier to read
+
+//changed the all lower case classNames to camel case fro readabiltiy
   const userElement = userinfos.map(userinfo => (
     <div className={"likeProfile"}>
       <Link className={"likeLink"} to={`userinfo/Matches/${userinfo._id}`}>

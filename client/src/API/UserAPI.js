@@ -1,11 +1,10 @@
 // ***I think you need to import createContext***
-import React, { Component } from "react";
+import React, {Component, createContext} from "react";
 import axios from "axios";
 
 
+
 const userAxios = axios.create();
-
-
 
 userAxios.interceptors.request.use(config => {
   const token = localStorage.getItem("token");
@@ -13,11 +12,13 @@ userAxios.interceptors.request.use(config => {
   return config;
 });
 
+const UserAPI = createContext();
 
-const UserAPI = React.createContext();
+// const UserAPI = React.createContext();
+
 // Import Pages
 
-export class UserAPIProvider extends Component {
+class UserAPIProvider extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -30,19 +31,19 @@ export class UserAPIProvider extends Component {
     this.getUserAPI();
   }
 
+  //changed "DEVELOPER" to "USER" for readability
   getUserAPI = () => {
     return axios.get("/api/userinfo").then(response => {
       this.setState({
-        results: response.data.map((developer, i) => {
-          if (i === 0) developer.selected = true;
-          developer.selected = false;
-          return developer;
+        results: response.data.map((user, i) => {
+          if (i === 0) user.selected = true;
+          user.selected = false;
+          return user;
         })
       });
       return response;
       
     });
-
   };
   
 
@@ -116,26 +117,28 @@ export class UserAPIProvider extends Component {
   }
 }
 
+// nick rewrote consumer
+export const withContext = C => props => 
+<UserAPI.Consumer>
+  {globalState => <C{...globalState}{...props} />}
+</UserAPI.Consumer>
 
-export const withContext = Component => {
-  return props => {
-    return (
-      <UserAPI.Consumer>
-        {globalState => {
-          return <Component {...globalState} {...props} />;
-        }}
-      </UserAPI.Consumer>
-    );
-  };
-};
+
+
+// export const withContext = Component => {
+//   return props => {
+//     return (
+//       <UserAPI.Consumer>
+//         {globalState => {
+//           return <Component {...globalState} {...props} />;
+//         }}
+//       </UserAPI.Consumer>
+//     );
+//   };
+// };
 
 
 
 export default withContext(UserAPIProvider);
 
 
-// nick rewrote context provider
-// export const withContext = C => props => 
-// <UserAPI.Consumer>
-//   {value => <C{...value}{...props} />}
-// </UserAPI.Consumer>

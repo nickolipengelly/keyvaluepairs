@@ -1,7 +1,7 @@
 import { React, Component } from "react";
-import { withContext } from "../API/UserAPI"
+import { withContext } from "./API/UserAPI"
 
-import "../style/accountCreate.css";
+import "./style/accountCreate.css";
 
 class AccountCreate extends Component {
   constructor() {
@@ -45,7 +45,8 @@ class AccountCreate extends Component {
   render() {
     return (
       <div>
-        <form className="account" onSubmit={this.handleSubmit}>
+        TEST
+               <form className="account" onSubmit={this.handleSubmit}>
           <label>First Name: </label>
           <input
             type="text"

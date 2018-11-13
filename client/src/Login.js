@@ -5,10 +5,10 @@ import Rodal from "rodal";
 import "rodal/lib/rodal.css";
 
 //import styles
-import "../style/login.css";
+import "./style/login.css";
 
 //import withContext
-import {withContext} from '../API/UserAPI';
+import {withContext} from './API/UserAPI';
 
 
 

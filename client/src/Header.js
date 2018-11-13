@@ -2,7 +2,7 @@ import React from "react";
 
 import "./style/header.css";
 
-import Login from "./Auth/Login";
+import Login from "./Login";
 
 function Header() {
   return (
