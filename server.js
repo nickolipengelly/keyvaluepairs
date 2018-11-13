@@ -10,7 +10,7 @@ const app = express();
 
 app.use(morgan("dev"));
 app.use(express.json());
-// app.use("/api", expressJwt({secret: process.env.SECRET}));
+app.use("/api", expressJwt({secret: process.env.SECRET}));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname,"client","build")));
 
@@ -26,5 +26,6 @@ app.use((err, req, res, next) => {
      return res.send({error: err.message})
 });
 
-mongoose.connect(process.env.MONGODB_URI, ()=> console.log("Connected to MongoDB"));
+mongoose.set('useCreateIndex', true)
+mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true}, ()=> console.log("Connected to MongoDB"));
 app.listen(process.env.PORT, ()=> console.log(`Server listening on port ${process.env.PORT}`));
