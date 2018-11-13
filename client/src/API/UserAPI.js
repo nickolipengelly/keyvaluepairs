@@ -88,6 +88,12 @@ export class UserAPIProvider extends Component{
             token:""
         })
     };
+// <<<<<<< nick5
+//     render(){
+
+//         const userInfo = this.state.results;
+// =======
+// >>>>>>> master
 
     render(){
         return(

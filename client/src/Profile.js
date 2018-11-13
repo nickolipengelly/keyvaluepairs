@@ -3,7 +3,7 @@ import axios from "axios";
 
 import "./style/profile.css";
 import LanguageMultiSelect from "./LanguageMultiSelect";
-import ProgrammingMultiSelect from './ProgrammingMultiSelect';
+import ProgrammingMultiSelect from "./ProgrammingMultiSelect";
 
 const axiosCustom = axios.create({
   transformRequest: [
@@ -27,7 +27,7 @@ class Profile extends Component {
       bio: "",
       selections: []
     };
-    this.manageFileResponse = this.manageFileResponse.bind(this);
+    // this.manageFileResponse = this.manageFileResponse.bind(this);
     this.handleUpload = this.handleUpload.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.programmingHandleChange = this.programmingHandleChange.bind(this);
@@ -39,21 +39,23 @@ class Profile extends Component {
   }
   sendImage(file, inputs) {
     return axiosCustom
-      .put("/api/userinfo", { file, ...inputs })
+      .put(`/api/userinfo/5be4c20bf0eee5f69ae75cb5`, { file, ...inputs })
       .then(response => response.data);
   }
   handleUpload(uploader, inputs) {
     return e => {
       e.preventDefault();
-      this.sendImage(uploader.current.file[0], inputs)
-          .then(this.manageFileResponse);
+      this.sendImage(uploader.current.files[0], inputs)
+        .then
+        // this.manageFileResponse
+        ();
     };
   }
-  manageFileResponse(newUserInfo) {
-    this.setState(prevState => ({
-      results: [...prevState.results, newUserInfo]
-    }));
-  }
+  // manageFileResponse(newUserInfo) {
+  //   this.setState(prevState => ({
+  //     results: [...prevState.results, newUserInfo]
+  //   }));
+  // }
   programmingHandleChange({ target }) {
     const selectedProgramming = target.selectedOptions;
     const programmingLanguages = Array.from(selectedProgramming).map(
@@ -72,18 +74,26 @@ class Profile extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="profileGrid">
+        <label>Upload Photo: </label>
         <form onSubmit={this.handleUpload(this.uploader, this.state)}>
+          <input
+            ref={this.uploader}
+            type="file"
+            name="avatarSubmit"
+            id="avatarSubmit"
+          />
           <ProgrammingMultiSelect handleChange={this.programmingHandleChange} />
           <LanguageMultiSelect handleChange={this.spokenHandleChange} />
-           <textarea
+          <label>Bio: </label>
+          <textarea
             onChange={this.handleChange}
             value={this.bio}
             name="bio"
             rows="40"
             cols="80"
           />
-          <button>Submit</button>
+          <button className="profileButton">Submit</button>
         </form>
       </div>
     );

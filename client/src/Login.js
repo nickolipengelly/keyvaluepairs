@@ -1,51 +1,52 @@
-import React,{Component} from "react";
-import {withContext} from "./API/UserAPI";
+
+
+import React from "react";
+import Rodal from "rodal";
+
+import "rodal/lib/rodal.css";
 
 import "./style/login.css";
 
+//import withcontext
 
-class Login extends Component {
-    constructor() {
-        super();
-        this.state = {
-            email: '',
-            password: ''
-        }
-        this.handleSubmit = this.handleSubmit.bind(this)
-    }
+//clearinputs
 
-    handleChange = (e) => {
-        const {name, value} = e.target
-        this.setState({
-            [name]: value
-        })
-    };
+//push to welcome page
+class LogIn extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { visible: false };
+  }
 
-    clearInputs = () => {
-        this.setState({
-            email: "",
-            password: ""
-        })
-    }
-    handleSubmit = (e) => {
-       console.log(this.props)
-        e.preventDefault();
-        this.props.login(this.state)
-            .then(() => this.props.history.push("/Matches"))
-    }
+  show() {
+    this.setState({ visible: true });
+  }
 
-    render() {
-        return (
-            <form onSubmit={this.handleSubmit}>
-                <input onChange={this.handleChange} value={this.state.email} name={"email"} type="text" placeholder={"Email"}/>
-                <input onChange={this.handleChange} value={this.state.password} type="text" name="password" placeholder={"Password"}/>
-                <button> Login</button>
+  hide() {
+    this.setState({ visible: false });
+  }
+
+  render() {
+    return (
+      <div className="loginDiv">
+        <button className="loginButton" onClick={this.show.bind(this)}>Log In</button>
+        <Rodal className="rodal" visible={this.state.visible} onClose={this.hide.bind(this)}>
+          <div>
+            <form className="logInForm">
+              <label htmlFor="userName">Username: </label>
+              <input type="text" />
+              <label htmlFor="password">Password: </label>
+              <input type="password" name="" id="" />
+              <button className="submitLogin" onClick="logIn"> Login </button>
             </form>
-        );
-    }
+          </div>
+        </Rodal>
+      </div>
+    );
+  }
 }
 
+//login get loging info
+//get todo's return response
 
-
-
-export default withContext(Login);
+export default LogIn;
