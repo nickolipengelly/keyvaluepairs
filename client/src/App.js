@@ -9,11 +9,13 @@ import Nav from "./Nav";
 import Header from "./Header";
 import Switch from "./SwitchPage";
 
+
 function App() {
   return (
     <div>
-      <Header />
       <Nav />
+      <Header />
+     
       <Switch />
     </div>
   );

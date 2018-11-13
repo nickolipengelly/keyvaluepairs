@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
+
 import "./style/nav.css";
 
 function Nav() {
@@ -10,15 +12,16 @@ function Nav() {
         {" "}
         Home{" "}
       </Link>
-      <Link className="profileLink" to="./Profile">
+      <Link className="profileLink" to="/Profile">
         {" "}
-        Edit Profile{" "}
+        Profile{" "}
       </Link>
-      <Link className="matchesLink" to="./Matches">
+      <Link className="matchesLink" to="/Matches">
         {" "}
         Matches{" "}
       </Link>
     </nav>
+   
   );
 }
 

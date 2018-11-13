@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
 .header{
+    font-family: 'Press Start 2P', cursive;
     height: 50px;
     text-align: center;
     font-size:30px;
-    color: black;
+    color: #202020;
+    padding-top: 10px; 
   
 }
 

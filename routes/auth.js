@@ -1,7 +1,8 @@
-const express = require ('express');
-const UserInfo = require('../model/userinfo');
+const express = require("express");
+const UserInfo = require("../model/userinfo");
 const authRouter = express.Router();
-const jwt = require('jsonwebtoken');
+const jwt = require("jsonwebtoken");
+
 
 authRouter.post("/AccountCreate",(req, res, next) =>{
     UserInfo.findOne({email: req.body.email}, (err, existingUserInfo) =>{
@@ -36,6 +37,7 @@ authRouter.post("/Login", (req, res, next) =>{
         // const token = jwt.sign(userinfo.toObject(), process.env.SECRET);
         return res.send({userinfo: userinfo.toObject(), token})
     })
+
 });
 
 module.exports = authRouter;
