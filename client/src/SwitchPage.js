@@ -6,18 +6,18 @@ import {Route, Switch} from "react-router-dom"
 import Home from "./Home";
 import Profile from "./Profile";
 import Matches from "./Matches";
-import AccountCreate from './Auth/AccountCreate';
+import AccountCreate from './AccountCreate';
 
 
 
-function SwitchPage(){
+function SwitchPage() {
     return (
         <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/Profile" component={Profile} />
-        <Route path="/Matches" component={Matches} />
-        <Route path="/AccountCreate" component={AccountCreate} />
-      </Switch>
+            <Route exact path="/" component={Home}/>
+            <Route path="/Profile" component={Profile}/>
+            <Route path="/Matches" component={Matches}/>
+            <Route path="/AccountCreate" component={AccountCreate}/>
+        </Switch>
     )
 }
 export default SwitchPage; 

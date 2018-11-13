@@ -30,13 +30,13 @@ export class UserAPIProvider extends Component{
     getUserAPI =() =>{
         return axios.get('/api/userinfo')
             .then(response => {
-               this.setState({
-                   results: response.data.map((developer, i) => {
-                       if( i === 0) developer.selected = true;
-                       developer.selected = false;
-                       return developer;
-                   })
-            })
+                this.setState({
+                    results: response.data.map((developer, i) => {
+                        if( i === 0) developer.selected = true;
+                        developer.selected = false;
+                        return developer;
+                    })
+                })
                 return response;
             })
     };
@@ -91,20 +91,20 @@ export class UserAPIProvider extends Component{
 
     render(){
         return(
-           <UserAPI.Provider
-            value={{
-                getUserAPI: this.getUserAPI,
-                userDelete: this.userInfoDelete,
-                accountCreate: this.accountCreate,
-                login: this.login,
-                logout: this.logout,
-                ...this.state
+            <UserAPI.Provider
+                value={{
+                    getUserAPI: this.getUserAPI,
+                    userDelete: this.userInfoDelete,
+                    accountCreate: this.accountCreate,
+                    login: this.login,
+                    logout: this.logout,
+                    ...this.state
 
-            }}
-           >
+                }}
+            >
 
-               {this.props.children}
-           </UserAPI.Provider>
+                {this.props.children}
+            </UserAPI.Provider>
         )
     }
 }

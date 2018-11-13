@@ -1,7 +1,7 @@
-import React from "react";
-import {withContext} from "../API/UserAPI";
+import React,{Component} from "react";
+import {withContext} from "./API/UserAPI";
 
-import "../style/login.css";
+import "./style/login.css";
 
 
 class Login extends Component {
@@ -11,6 +11,7 @@ class Login extends Component {
             email: '',
             password: ''
         }
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleChange = (e) => {
@@ -27,6 +28,7 @@ class Login extends Component {
         })
     }
     handleSubmit = (e) => {
+       console.log(this.props)
         e.preventDefault();
         this.props.login(this.state)
             .then(() => this.props.history.push("/Matches"))
