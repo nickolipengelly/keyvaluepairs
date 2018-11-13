@@ -16,7 +16,7 @@ function SwitchPage() {
       <Route exact path="/" component={Home} />
       <Route path="/Profile" component={Profile} />
       <Route path="/Matches" component={Matches} />
-      <Route path="./AccountCreate.js" component={AccountCreate} />
+      <Route path="/AccountCreate.js" component={AccountCreate} />
     </Switch>
   );
 }
