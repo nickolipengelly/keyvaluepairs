@@ -25,7 +25,12 @@ app.use((err, req, res, next) => {
     }
      return res.send({error: err.message})
 });
+<<<<<<< HEAD
 
 mongoose.set('useCreateIndex', true)
 mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true}, ()=> console.log("Connected to MongoDB"));
+=======
+mongoose.set('useCreateIndex', true)
+mongoose.connect(process.env.MONGODB_URI,{useNewUrlParser: true}, ()=> console.log("Connected to MongoDB"));
+>>>>>>> 5c14c7beda2da82aa068ff48974c31dfdb660d70
 app.listen(process.env.PORT, ()=> console.log(`Server listening on port ${process.env.PORT}`));

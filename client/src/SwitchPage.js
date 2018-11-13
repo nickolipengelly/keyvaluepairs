@@ -20,4 +20,5 @@ function SwitchPage() {
     </Switch>
   );
 }
+
 export default SwitchPage;

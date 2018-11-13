@@ -117,11 +117,7 @@ class UserAPIProvider extends Component {
   }
 }
 
-// nick rewrote consumer
-export const withContext = C => props => 
-<UserAPI.Consumer>
-  {globalState => <C{...globalState}{...props} />}
-</UserAPI.Consumer>
+
 
 
 

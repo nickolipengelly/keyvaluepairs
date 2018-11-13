@@ -2,7 +2,9 @@ import React from "react";
 
 import "./style/header.css";
 
+
 import Login from "./Login";
+
 
 function Header() {
   return (
@@ -10,6 +12,8 @@ function Header() {
       <div className="header">&#123;KeyValue: Pairs&#125;</div>
       <Login />
     </div>
+
+
   );
 }
 
