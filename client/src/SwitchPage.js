@@ -6,6 +6,9 @@ import { Route, Switch } from "react-router-dom";
 import Home from "./Home";
 import Profile from "./Profile";
 import Matches from "./Matches";
+
+
+
 import AccountCreate from "./Auth/AccountCreate";
 
 function SwitchPage() {
@@ -18,4 +21,5 @@ function SwitchPage() {
     </Switch>
   );
 }
+
 export default SwitchPage;

@@ -15,7 +15,9 @@ const upload = multer({
 
 userInfoRouter.route('/')
     .get((req, res, next) =>{
-        UserInfo.find({},req.query, (err, foundUserInfo) =>{
+        // const userinfo = new UserInfo(req.body);
+        // userinfo.email = req.userinfo._id
+        UserInfo.find({email: req.body.email},req.query, (err, foundUserInfo) =>{
             if(err){
                 res.status(400)
                 next(err)
@@ -26,7 +28,7 @@ userInfoRouter.route('/')
     .put(upload.single('file'),(req,res,next)=>{
         req.body.filename = req.file.filename;
         const newUserInfo = new UserInfo(req.body);
-        newUserInfo.save((err, savedUserInfo) =>{
+        newUserInfo.save({email: req.body.email},(err, savedUserInfo) =>{
             if(err){
                 res.status(400)
                 next(err)
@@ -58,5 +60,6 @@ userInfoRouter.route("/img/:filename")
     .get((req,res,next) =>{
         res.sendFile(path.resolve(__dirname, `../temp/${req.params.filename}`))
     })
+
 
 module.exports = userInfoRouter;
