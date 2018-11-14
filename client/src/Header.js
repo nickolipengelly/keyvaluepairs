@@ -11,9 +11,9 @@ function Header() {
     <div>
     <div className="headerGrid">
       <div className="header">&#123;KeyValue: Pairs&#125;</div>
-      <Login />
+      <Login/>
     </div>
-
+    </div>
 
   );
 }

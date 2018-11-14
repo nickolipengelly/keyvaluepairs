@@ -1,11 +1,12 @@
 import React from "react";
 
 //import react router
-import { Link, Route, Switch } from "react-router-dom";
+import {Link,Route,Switch} from "react-router-dom";
 
 
 // Page Import
 import UserDetail from "./UserDetailPage";
+import {withContext} from "./UserAPI";
 
 function UserLayout({ userinfos }) {
   const src = "/api/userinfo/img/";
@@ -42,4 +43,4 @@ function UserLayout({ userinfos }) {
   );
 }
 
-export default UserLayout;
+export default withContext(UserLayout);
