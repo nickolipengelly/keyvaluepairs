@@ -14,20 +14,20 @@ const options = [
 
 class LanguageMultiSelect extends React.Component {
   state = {
-    selectedOption: []
+    selectedLanguageOption: []
   };
-  handleChange = selectedOption => {
-    this.setState({ selectedOption });
-    console.log(`Option selected:`, selectedOption);
+  handleChange = selectedLanguageOption => {
+    this.setState({ selectedLanguageOption });
+    console.log(`Option selected:`, selectedLanguageOption);
   };
   render() {
-    const { selectedOption } = this.state;
+    const { selectedLanguageOption } = this.state;
 
     return (
       <div className="languageStyle">
         <label> Spoken Language Select: </label>
         <Select
-          value={selectedOption}
+          value={selectedLanguageOption}
           onChange={this.handleChange}
           options={options}
           isMulti={true}

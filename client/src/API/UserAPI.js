@@ -121,17 +121,17 @@ class UserAPIProvider extends Component {
 
 
 
-// export const withContext = Component => {
-//   return props => {
-//     return (
-//       <UserAPI.Consumer>
-//         {globalState => {
-//           return <Component {...globalState} {...props} />;
-//         }}
-//       </UserAPI.Consumer>
-//     );
-//   };
-// };
+export const withContext = Component => {
+  return props => {
+    return (
+      <UserAPI.Consumer>
+        {globalState => {
+          return <Component {...globalState} {...props} />;
+        }}
+      </UserAPI.Consumer>
+    );
+  };
+};
 
 
 

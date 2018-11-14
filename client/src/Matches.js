@@ -1,15 +1,17 @@
 import React from "react";
 
-import UserAPI from "./API/UserAPI";
+import {withContext} from "./API/UserAPI";
 import "./style/matches.css";
 
-function Matches() {
+
+function Matches(props) {
+  const withContext = props.results.map((results) => {
   return (
     <div>
-      TEST~~~
-      <UserAPI />
+     <div> test src ={results}</div>
     </div>
   );
+});
+return <div className="test">{withContext}</div>
 }
-
-export default Matches;
+export default withContext(Matches);

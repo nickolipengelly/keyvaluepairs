@@ -45,7 +45,7 @@ class AccountCreate extends Component {
 
   render(){
   return (
-      <div>
+      <div className="accountCreateDiv">
         <form className="account" onSubmit={this.handleSubmit}>
           <label>First Name: </label>
           <input type="text" value={this.state.fName} name='fName' onChange={this.handleChange}/>
