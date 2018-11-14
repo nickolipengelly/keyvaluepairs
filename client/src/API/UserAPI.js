@@ -138,3 +138,13 @@ export const withContext = Component => {
 export default withContext(UserAPIProvider);
 
 
+// nick rewrote consumer
+// export const withContext = C => props => 
+// <UserAPI.Consumer>
+//   {globalState => <C{...globalState}{...props} />}
+// </UserAPI.Consumer>
+
+
+
+
+

@@ -27,5 +27,6 @@ app.use((err, req, res, next) => {
 });
 
 mongoose.set('useCreateIndex', true)
-mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true}, ()=> console.log("Connected to MongoDB"));
+mongoose.connect(process.env.MONGODB_URI,{useNewUrlParser: true}, ()=> console.log("Connected to MongoDB"));
+
 app.listen(process.env.PORT, ()=> console.log(`Server listening on port ${process.env.PORT}`));
