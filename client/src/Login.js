@@ -1,7 +1,7 @@
 
 
 import React from "react";
-
+import {withRouter} from "react-router-dom";
 //import modal
 import Rodal from "rodal";
 import "rodal/lib/rodal.css";
@@ -13,7 +13,7 @@ import "./style/login.css";
 import { withContext } from "./API/UserAPI";
 
 //push to welcome page
-class LogIn extends React.Component {
+class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -41,7 +41,7 @@ class LogIn extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
     this.props
-      .LogIn(this.state)
+      .login(this.state)
       .then(() => this.props.history.push("./Matches.js"));
   };
 
@@ -65,12 +65,12 @@ class LogIn extends React.Component {
           onClose={this.hide.bind(this)}
         >
           <div>
-            <form className="logInForm">
-              <label htmlFor="userName">E-Mail:</label>
-              <input type="text" />
+            <form className="logInForm" onSubmit={this.handleSubmit}>
+              <label htmlFor="Email">E-Mail:</label>
+                <input onChange={this.handleChange} value={this.state.email} name={"email"} type="text" placeholder={"Email"}/>
               <label htmlFor="password">Password: </label>
-              <input type="password" name="" id="" />
-              <button className="submitLogin" onClick="logIn">
+                <input onChange={this.handleChange} value={this.state.password} type="text" name="password" placeholder={"Password"}/>
+              <button className="submitLogin">
                 {" "}
                 Login{" "}
               </button>
@@ -85,4 +85,4 @@ class LogIn extends React.Component {
 //login get loging info
 //get todo's return response
 
-export default withContext(LogIn);
+export default withContext(withRouter(Login));

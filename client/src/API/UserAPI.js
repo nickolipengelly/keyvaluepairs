@@ -8,7 +8,7 @@ const userAxios = axios.create();
 
 userAxios.interceptors.request.use(config => {
   const token = localStorage.getItem("token");
-  config.headers.Autherization = `Programming${token}`;
+  config.headers.Authorization = `Bearer ${token}`;
   return config;
 });
 
@@ -33,7 +33,7 @@ class UserAPIProvider extends Component {
 
   //changed "DEVELOPER" to "USER" for readability
   getUserAPI = () => {
-    return axios.get("/api/userinfo").then(response => {
+    return userAxios.get("/api/userinfo").then(response => {
       this.setState({
         results: response.data.map((user, i) => {
           if (i === 0) user.selected = true;
@@ -45,7 +45,6 @@ class UserAPIProvider extends Component {
       
     });
   };
-  
 
   userInfoDelete(userInfo_id) {
     return axios.delete("/api/userinfo/" + userInfo_id).then(response => {
