@@ -2,7 +2,7 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 
-
+import ProtectedRoute from "./ProtectedRoute"
 
 //import elements
 import Home from "./Home";
@@ -16,9 +16,9 @@ function SwitchPage() {
   return (
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route path="/Profile" component={Profile} />
-      <Route path="/Matches" component={Matches} />
-      <Route path="./AccountCreate.js" component={AccountCreate} />
+      <ProtectedRoute path="/Profile" component={Profile} />
+      <ProtectedRoute path="/Matches" component={Matches} />
+      <Route path="/AccountCreate" component={AccountCreate} />
     </Switch>
   );
 }

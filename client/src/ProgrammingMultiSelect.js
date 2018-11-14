@@ -15,23 +15,23 @@ const options = [
 ];
 
 //changed selectedOption from null to an array
-
+// changed selectedOption to selectedProgrammingOption
 class ProgrammingMultiSelect extends React.Component {
   state = {
-    selectedOption: []
+    selectedProgrammingOption: []
   };
-  handleChange = selectedOption => {
-    this.setState({ selectedOption });
-    console.log(`Option selected:`, selectedOption);
+  handleChange = selectedProgrammingOption => {
+    this.setState({ selectedProgrammingOption });
+    console.log(`Option selected:`, selectedProgrammingOption);
   };
   render() {
-    const { selectedOption } = this.state;
+    const { selectedProgrammingOption } = this.state;
 
     return (
       <div className="programSelect">
         <label>Programming Language Select</label>
       <Select
-        value={selectedOption}
+        value={selectedProgrammingOption}
         onChange={this.handleChange}
         options={options}
         isMulti={true}

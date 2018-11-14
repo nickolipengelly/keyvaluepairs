@@ -10,38 +10,39 @@ import "rodal/lib/rodal.css";
 import "./style/login.css";
 
 //import withContext
-import {withContext} from './API/UserAPI';
-
-
+import { withContext } from "./API/UserAPI";
 
 //push to welcome page
 class LogIn extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
       visible: false,
       email: "",
-      password: "" };
+      password: ""
+    };
   }
 
   handleChange = e => {
-    const {name, value} = e.target; 
-     this.setState({
-       [name]: value
-     });
+    const { name, value } = e.target;
+    this.setState({
+      [name]: value
+    });
   };
 
   //clearinputs
-  clearInputs = () => { 
+  clearInputs = () => {
     this.setState({
-      email: "", 
+      email: "",
       password: ""
     });
   };
 
-  handleSubmit = e => { 
+  handleSubmit = e => {
     e.preventDefault();
-    this.props.LogIn(this.state).then(() => this.props.history.push("./Matches.js"))
+    this.props
+      .LogIn(this.state)
+      .then(() => this.props.history.push("./Matches.js"));
   };
 
   show() {
@@ -55,15 +56,24 @@ class LogIn extends React.Component {
   render() {
     return (
       <div className="loginDiv">
-        <button className="loginButton" onClick={this.show.bind(this)}>Log In</button>
-        <Rodal className="rodal" visible={this.state.visible} onClose={this.hide.bind(this)}>
+        <button className="loginButton" onClick={this.show.bind(this)}>
+          Log In
+        </button>
+        <Rodal
+          className="rodal"
+          visible={this.state.visible}
+          onClose={this.hide.bind(this)}
+        >
           <div>
             <form className="logInForm">
               <label htmlFor="userName">E-Mail:</label>
               <input type="text" />
               <label htmlFor="password">Password: </label>
               <input type="password" name="" id="" />
-              <button className="submitLogin" onClick="logIn"> Login </button>
+              <button className="submitLogin" onClick="logIn">
+                {" "}
+                Login{" "}
+              </button>
             </form>
           </div>
         </Rodal>

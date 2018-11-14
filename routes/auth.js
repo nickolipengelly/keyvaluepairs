@@ -20,13 +20,16 @@ authRouter.post("/AccountCreate",(req, res, next) =>{
                 return next(err)
             }
 
-            return res.status(201).send({userinfo: userinfo.toObject(), token})
+            return res.status(201).send({userinfo: userinfo.toObject()})
+
         })
     })
 });
 
 authRouter.post("/Login", (req, res, next) =>{
+
     UserInfo.findOne({email: req.body.email.toLowerCase()}, (err,userinfo) =>{
+
         if(err){
             res.status(500)
             return next(err);
@@ -34,7 +37,8 @@ authRouter.post("/Login", (req, res, next) =>{
             res.status(403);
             return next(new Error("Email or Password are incorrect please check them and try again."))
         }
-        // const token = jwt.sign(userinfo.toObject(), process.env.SECRET);
+
+        const token = jwt.sign(userinfo.toObject(), process.env.SECRET);
         return res.send({userinfo: userinfo.toObject(), token})
     })
 
