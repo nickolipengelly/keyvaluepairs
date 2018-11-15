@@ -38,8 +38,8 @@ class AccountCreate extends Component {
     }
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.accountCreate(this.state)
-            .then(()=> this.props.history.push("/Matches"))
+             this.props.accountCreate(this.state)
+            .then(()=> this.props.history.push("./Profile.js"))
     }
     validateForm(){
         return this.state.email.length >= 2 && this.state.password.length >= 2

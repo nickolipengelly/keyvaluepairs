@@ -1,8 +1,6 @@
 // ***I think you need to import createContext***
-import React, {Component, createContext} from "react";
+import React, { Component, createContext } from "react";
 import axios from "axios";
-
-
 
 const userAxios = axios.create();
 
@@ -26,6 +24,7 @@ class UserAPIProvider extends Component {
       userinfo: JSON.parse(localStorage.getItem("userinfo")) || {},
       token: localStorage.getItem("token") || ""
     };
+    console.log(props);
   }
   componentDidMount() {
     this.getUserAPI();
@@ -34,15 +33,16 @@ class UserAPIProvider extends Component {
   //changed "DEVELOPER" to "USER" for readability
   getUserAPI = () => {
     return userAxios.get("/api/userinfo").then(response => {
+      console.log(response)
       this.setState({
         results: response.data.map((user, i) => {
           if (i === 0) user.selected = true;
           user.selected = false;
           return user;
+          
         })
       });
       return response;
-      
     });
   };
 
@@ -61,6 +61,7 @@ class UserAPIProvider extends Component {
   accountCreate = userInfo => {
     return axios.post("/auth/AccountCreate", userInfo).then(response => {
       const { userinfo, token } = response.data;
+      console.log(response.data);
       localStorage.setItem("token", token);
       localStorage.setItem("userinfo", JSON.stringify(userinfo));
       this.setState({
@@ -95,10 +96,8 @@ class UserAPIProvider extends Component {
     });
   };
 
-
   render() {
     return (
-     
       <UserAPI.Provider
         value={{
           getUserAPI: this.getUserAPI,
@@ -111,14 +110,9 @@ class UserAPIProvider extends Component {
       >
         {this.props.children}
       </UserAPI.Provider>
-   
     );
   }
 }
-
-
-
-
 
 export const withContext = Component => {
   return props => {
@@ -132,18 +126,10 @@ export const withContext = Component => {
   };
 };
 
-
-
 export default withContext(UserAPIProvider);
 
-
 // nick rewrote consumer
-// export const withContext = C => props => 
+// export const withContext = C => props =>
 // <UserAPI.Consumer>
 //   {globalState => <C{...globalState}{...props} />}
 // </UserAPI.Consumer>
-
-
-
-
-

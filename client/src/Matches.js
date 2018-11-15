@@ -1,17 +1,20 @@
 import React from "react";
 
-import {withContext} from "./API/UserAPI";
+
 import "./style/matches.css";
 
 
-function Matches(props) {
-  const withContext = props.results.map((results) => {
-  return (
+function Matches() {
+   return (
     <div>
-     <div> test src ={results}</div>
+      <h4>First Name:  </h4>
+      <h4>Placeholder for props.fName </h4>
+      <h4>Placeholder for AVATAR</h4>
+      <h4>Placeholder for </h4>
+      <h4>Placeholder for </h4>
+      <h4>Bio: </h4>
+      <h4>Placeholder for props.bio</h4>
     </div>
-  );
-});
-return <div className="test">{withContext}</div>
-}
-export default withContext(Matches);
+    
+   )}
+export default Matches;

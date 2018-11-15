@@ -5,7 +5,6 @@ import "./style/profile.css";
 import LanguageMultiSelect from "./LanguageMultiSelect";
 import ProgrammingMultiSelect from "./ProgrammingMultiSelect";
 
-
 const axiosCustom = axios.create({
   transformRequest: [
     data => {
@@ -40,7 +39,7 @@ class Profile extends Component {
   }
   sendImage(file, inputs) {
     return axiosCustom
-      .put(`/api/userinfo/5be4c20bf0eee5f69ae75cb5`, { file, ...inputs })
+      .put(`/api/userinfo/`, { file, ...inputs })
       .then(response => response.data);
   }
   handleUpload(uploader, inputs) {
@@ -86,6 +85,7 @@ class Profile extends Component {
           />
           <ProgrammingMultiSelect handleChange={this.programmingHandleChange} />
           <LanguageMultiSelect handleChange={this.spokenHandleChange} />
+
           <label>Bio: </label>
           <textarea
             onChange={this.handleChange}
@@ -94,7 +94,6 @@ class Profile extends Component {
             rows="40"
             cols="80"
           />
-
 
           <button className="profileButton">Submit</button>
         </form>
