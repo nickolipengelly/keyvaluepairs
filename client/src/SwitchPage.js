@@ -7,7 +7,8 @@ import ProtectedRoute from "./ProtectedRoute"
 //import elements
 import Home from "./Home";
 import Profile from "./Profile";
-import Matches from "./Matches";
+import Matches from "./Matches.js";
+import Matchmaker from "./Matchmaker"
 
 import AccountCreate from "./AccountCreate.js";
 
@@ -18,6 +19,7 @@ function SwitchPage() {
       <Route exact path="/" component={Home} />
       <ProtectedRoute path="/Profile" component={Profile} />
       <ProtectedRoute path="/Matches" component={Matches} />
+      <ProtectedRoute path="/Matchmaker" component={Matchmaker} />
       <Route path="/AccountCreate" component={AccountCreate} />
     </Switch>
   );

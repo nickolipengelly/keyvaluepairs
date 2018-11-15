@@ -17,6 +17,7 @@ function Nav() {
         {" "}
         Profile{" "}
       </Link>
+      <Link className="matchMaker" to="/Matchmaker">Find a Match</Link>
       <Link className="matchesLink" to="/Matches">
         {" "}
         Matches{" "}

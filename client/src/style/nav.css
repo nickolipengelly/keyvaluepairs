@@ -5,7 +5,7 @@
     text-align: center;
     height: 20px;
     padding-bottom: 5px;
-    border-bottom: 1px double grey;
+    border-bottom: 1px solid grey;
     width: 100%;
 }
 
@@ -20,6 +20,10 @@
 }
 
 .matchesLink {
+    text-decoration: none;
+    padding: 4px;
+}
+.matchMaker{
     text-decoration: none;
     padding: 4px;
 }
@@ -41,6 +45,13 @@
 }
 
 .matchesLink:hover {
+    font-size: 20px;
+    transition: 300ms;
+    color: rebeccapurple;
+    transition-delay: 100ms;
+}
+
+.matchMaker:hover{
     font-size: 20px;
     transition: 300ms;
     color: rebeccapurple;

@@ -1,7 +1,5 @@
-
-
 import React from "react";
-import {withRouter} from "react-router-dom";
+import { withRouter } from "react-router-dom";
 //import modal
 import Rodal from "rodal";
 import "rodal/lib/rodal.css";
@@ -67,10 +65,22 @@ class Login extends React.Component {
           <div>
             <form className="logInForm" onSubmit={this.handleSubmit}>
               <label htmlFor="Email">E-Mail:</label>
-                <input onChange={this.handleChange} value={this.state.email} name={"email"} type="text" placeholder={"Email"}/>
+              <input
+                onChange={this.handleChange}
+                value={this.state.email}
+                name={"email"}
+                type="text"
+                placeholder={"Email"}
+              />
               <label htmlFor="password">Password: </label>
-                <input onChange={this.handleChange} value={this.state.password} type="text" name="password" placeholder={"Password"}/>
-              <button className="submitLogin">
+              <input
+                onChange={this.handleChange}
+                value={this.state.password}
+                type="password"
+                name="password"
+                placeholder={"Password"}
+              />
+              <button className="submitLogin" onClick={this.handleSubmit}>
                 {" "}
                 Login{" "}
               </button>

@@ -1,7 +1,7 @@
 import React from "react";
 import Select from "react-select";
 
-import "./style/languageMultiSelect.css"
+import "./style/languageMultiSelect.css";
 
 const options = [
   { value: "english", label: "English" },
