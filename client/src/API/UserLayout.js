@@ -8,7 +8,7 @@ import {Link,Route,Switch} from "react-router-dom";
 import UserDetail from "./UserDetailPage";
 import {withContext} from "./UserAPI";
 
-function UserLayout({ userinfos }) {
+function UserLayout(props) {
   const src = "/api/userinfo/img/";
 
 //changed the all lower case classNames to camel case fro readabiltiy
@@ -22,6 +22,7 @@ function UserLayout({ userinfos }) {
       </Link>
     </div>
   ));
+  console.log(props)
   return (
     <div>
       <Switch>

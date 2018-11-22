@@ -47,7 +47,7 @@ class UserAPIProvider extends Component {
   };
 
   userInfoDelete(userInfo_id) {
-    return axios.delete("/api/userinfo/" + userInfo_id).then(response => {
+    return userAxios.delete("/api/userinfo/" + userInfo_id).then(response => {
       this.setState(prevState => {
         return {
           results: prevState.results.filter(

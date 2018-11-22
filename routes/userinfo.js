@@ -17,6 +17,7 @@ userInfoRouter.route('/')
     .get((req, res, next) =>{
         // const userinfo = new UserInfo(req.body);
         // userinfo.email = req.userinfo._id
+        console.log(req.body.email)
         UserInfo.find({email: req.body.email},req.query, (err, foundUserInfo) =>{
             if(err){
                 res.status(400)
